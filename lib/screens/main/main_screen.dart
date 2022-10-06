@@ -10,7 +10,7 @@ class MainScreen extends StatelessWidget {
     return Scaffold(
       body: Row(
         children: [
-          Expanded(flex: 2, child: SideDrawer()),
+          Expanded(flex: 2, child: SideMenu()),
           Expanded(
               flex: 7,
               child: Container(
@@ -18,19 +18,6 @@ class MainScreen extends StatelessWidget {
               )),
         ],
       ),
-    );
-  }
-}
-
-class SideDrawer extends StatelessWidget {
-  const SideDrawer({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Drawer(
-      child: Column(children: [myInfo()]),
     );
   }
 }

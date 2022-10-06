@@ -1,34 +1,40 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_profile/constants.dart';
 
-class myInfo extends StatelessWidget {
-  const myInfo({
+import 'area_info_text.dart';
+import 'my_info.dart';
+import 'skills.dart';
+
+class SideMenu extends StatelessWidget {
+  const SideMenu({
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: 1.23,
-      child: Container(
-        color: Color(0xFF242430),
-        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Spacer(),
-          CircleAvatar(
-            radius: 50,
-            backgroundImage: AssetImage('assets/images/IMG_7344.jpg'),
-          ),
-          Text(
-            'Naga Anjaneyulu Karumuri',
-            style: Theme.of(context).textTheme.subtitle1,
-          ),
-          Text(
-            'Software Developer and Computer Scientist',
-            style: TextStyle(fontWeight: FontWeight.w200, height: 1.5),
-            textAlign: TextAlign.center,
-          ),
-          Spacer()
-        ]),
-      ),
+    return Drawer(
+      child: Column(children: [
+        MyInfo(),
+        Expanded(
+            child: SingleChildScrollView(
+          padding: EdgeInsets.all(defaultPadding),
+          child: Column(children: [
+            AreaInfoText(
+              title: 'Residence',
+              text: 'United States',
+            ),
+            AreaInfoText(
+              title: 'City',
+              text: 'Newark, NJ',
+            ),
+            AreaInfoText(
+              title: 'Age',
+              text: '22',
+            ),
+            Skills(),
+          ]),
+        ))
+      ]),
     );
   }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_profile/constants.dart';
 
 import 'area_info_text.dart';
+import 'coding.dart';
 import 'my_info.dart';
 import 'skills.dart';
 
@@ -32,6 +33,10 @@ class SideMenu extends StatelessWidget {
               text: '22',
             ),
             Skills(),
+            SizedBox(
+              height: defaultPadding,
+            ),
+            Coding(),
           ]),
         ))
       ]),

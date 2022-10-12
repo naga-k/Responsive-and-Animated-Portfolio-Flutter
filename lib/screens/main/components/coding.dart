@@ -11,6 +11,12 @@ class Coding extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      children: [
+        Divider(),
+        Text(
+          'Coding',
+          style: Theme.of(context).textTheme.subtitle2,
+        )
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Divider(),

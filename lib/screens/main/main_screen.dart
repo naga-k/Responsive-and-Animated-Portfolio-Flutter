@@ -4,6 +4,8 @@ import 'package:flutter_profile/responsive.dart';
 
 import 'components/side_menu.dart';
 
+import 'components/side_menu.dart';
+
 class MainScreen extends StatelessWidget {
   const MainScreen({Key? key, required this.children}) : super(key: key);
 
@@ -12,6 +14,17 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
+      body: Row(
+        children: [
+          Expanded(flex: 2, child: SideMenu()),
+          Expanded(
+              flex: 7,
+              child: Container(
+                color: Colors.blue,
+              )),
+        ],
+
       // We hide the appbar on desktop
       appBar: Responsive.isDesktop(context)
           ? null

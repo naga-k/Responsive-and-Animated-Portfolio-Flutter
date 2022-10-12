@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_profile/constants.dart';
+=======
+
+import '../../../constants.dart';
 
 class AreaInfoText extends StatelessWidget {
   const AreaInfoText({
@@ -9,6 +12,11 @@ class AreaInfoText extends StatelessWidget {
   }) : super(key: key);
 
   final String title, text;
+    this.title,
+    this.text,
+  }) : super(key: key);
+
+  final String? title, text;
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +32,10 @@ class AreaInfoText extends StatelessWidget {
           Text(
             text,
           ),
+            title!,
+            style: TextStyle(color: Colors.white),
+          ),
+          Text(text!),
         ],
       ),
     );

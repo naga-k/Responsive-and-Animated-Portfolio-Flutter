@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_profile/constants.dart';
 
 import 'animated_circular_progress_indicator.dart';
+
+
+import 'package:flutter_profile/components/animated_progress_indicator.dart';
+
+import '../../../constants.dart';
+
+//
 
 class Skills extends StatelessWidget {
   const Skills({
@@ -11,14 +19,19 @@ class Skills extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+
       //Skills column alignment set here
+
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Divider(),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: defaultPadding),
           child: Text(
+
             'Skills',
+            "Skills",
+
             style: Theme.of(context).textTheme.subtitle2,
           ),
         ),
@@ -27,6 +40,7 @@ class Skills extends StatelessWidget {
             Expanded(
               child: AnimatedCircularProgressIndicator(
                 percentage: 0.8,
+
                 label: 'Flutter',
               ),
             ),
@@ -50,6 +64,25 @@ class Skills extends StatelessWidget {
             ),
           ],
         )
+                label: "Flutter",
+              ),
+            ),
+            SizedBox(width: defaultPadding),
+            Expanded(
+              child: AnimatedCircularProgressIndicator(
+                percentage: 0.72,
+                label: "Django",
+              ),
+            ),
+            SizedBox(width: defaultPadding),
+            Expanded(
+              child: AnimatedCircularProgressIndicator(
+                percentage: 0.65,
+                label: "Firebase",
+              ),
+            ),
+          ],
+        ),
       ],
     );
   }
